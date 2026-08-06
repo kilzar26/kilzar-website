@@ -1,12 +1,1 @@
-KILZAR TECHNOLOGIES WEBSITE
-
-No installation is required.
-
-To preview:
-1. Open the folder.
-2. Double-click index.html.
-
-To publish free:
-Upload this folder to Cloudflare Pages, Netlify, or GitHub Pages.
-Custom domain: kilzartech.com
-Contact email: info@kilzartech.com
+const b=document.querySelector('.menu-toggle'),n=document.querySelector('.nav-links');b?.addEventListener('click',()=>n.classList.toggle('open'));document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')));const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');o.unobserve(x.target)}}),{threshold:.14});document.querySelectorAll('.reveal').forEach(x=>o.observe(x));const g=document.querySelector('.cursor-glow');addEventListener('pointermove',e=>{if(g){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'}});
