@@ -14,3 +14,6 @@ Final production static website for Kilzar Technologies LLC.
 - `script.js` — navigation, reveal animations, active-section behavior
 - `assets/` — logo and favicon
 - `privacy.html` and `terms.html` — legal pages
+
+## Public disclosure policy
+This public website intentionally avoids proprietary implementation details, internal architecture, unreleased feature specifications, and patent-sensitive information.
