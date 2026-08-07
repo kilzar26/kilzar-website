@@ -18,3 +18,20 @@ section{padding:110px 0;border-top:1px solid #0b2136;position:relative}.section-
 @media(max-width:900px){.links a:not(.contactlink){display:none}.links{gap:10px}.hero{grid-template-columns:1fr;padding-top:55px}.hero-stage{min-height:470px}.hero-car{width:105%;right:-3%;top:5%}.grid{grid-template-columns:1fr}.split,.contact{grid-template-columns:1fr}.krai-viz{padding-left:48%;}.hero h1{font-size:clamp(52px,12vw,78px)}section{padding:80px 0}.nav{height:76px}.brand img{width:210px}.hud{display:none}}
 @media(max-width:560px){.hero-stage{min-height:360px}.hero-car{width:125%;right:-14%;height:82%}.halo-a{width:320px;height:320px}.halo-b,.halo-c,.trustline{display:none}.krai-viz{padding:250px 25px 28px}.krai-core{left:calc(50% - 62px);top:70px}.krai-orbit{left:calc(50% - 120px);top:40px}.contact{padding:30px}.actions{flex-wrap:wrap}.brand img{width:185px}.contactlink{padding:10px 14px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Final production QA: accessibility, mobile navigation, focus, stability */
+.skip-link{position:fixed;left:12px;top:-60px;z-index:1000;background:#fff;color:#02101f;padding:10px 14px;border-radius:8px;font-weight:800}
+.skip-link:focus{top:12px}
+:focus-visible{outline:2px solid #57e5ff;outline-offset:4px}
+.menu-toggle{display:none;border:1px solid #1b6089;background:#07182b;border-radius:10px;width:46px;height:42px;padding:10px;cursor:pointer}
+.menu-toggle span{display:block;height:2px;background:#dff7ff;margin:5px 0;transition:.25s}
+.hero-car{content-visibility:auto}
+@media(max-width:900px){
+  .menu-toggle{display:block;position:relative;z-index:60}
+  .links{position:fixed;left:4%;right:4%;top:82px;display:none!important;flex-direction:column;align-items:stretch;gap:4px;padding:18px;background:#03101ff5;border:1px solid #164364;border-radius:16px;box-shadow:0 28px 70px #000b;backdrop-filter:blur(18px)}
+  .links.open{display:flex!important}
+  .links a,.links a:not(.contactlink){display:block!important;padding:12px 14px;border-radius:9px}
+  .links a:hover{background:#082039}
+  .contactlink{margin-top:7px;text-align:center}
+  body.menu-open{overflow:hidden}
+}

@@ -21,3 +21,17 @@ if(canvas&&ctx&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
  function draw(){ctx.clearRect(0,0,w,h);for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(63,205,255,.42)';ctx.fill()}for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){let a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);if(d<115){ctx.strokeStyle=`rgba(25,126,190,${(1-d/115)*.10})`;ctx.lineWidth=.6;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}requestAnimationFrame(draw)}
  addEventListener('resize',resize,{passive:true});resize();draw();
 }
+
+const menuButton=document.querySelector('.menu-toggle');
+const mobileNav=document.querySelector('.links');
+if(menuButton&&mobileNav){
+  const closeMenu=()=>{mobileNav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')};
+  menuButton.addEventListener('click',()=>{
+    const open=!mobileNav.classList.contains('open');
+    mobileNav.classList.toggle('open',open);
+    menuButton.setAttribute('aria-expanded',String(open));
+    document.body.classList.toggle('menu-open',open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+}
