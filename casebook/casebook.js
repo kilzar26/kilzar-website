@@ -5,6 +5,10 @@
   const list = document.querySelector('#case-list');
   const count = document.querySelector('#count');
   const status = document.querySelector('#save-status');
+  const pilotForm = document.querySelector('form[name="casebook-pilot"]');
+  const referral = new URLSearchParams(location.search).get('source');
+  const knownReferrals = ['after-repair-guide', 'repair-history-guide', 'intermittent-guide'];
+  if (pilotForm && knownReferrals.includes(referral)) pilotForm.elements.referral_source.value = referral;
   const allowedSources = ['Owner observation', 'Scan tool reading', 'Technician observation', 'Service record'];
   const fields = ['year', 'make', 'model', 'mileage', 'concern', 'beforeNote', 'beforeCodes', 'source', 'action', 'afterCodes', 'afterNote'];
   let cases = [];

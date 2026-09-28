@@ -1,4 +1,4 @@
-const CACHE = 'krai-casebook-shell-v1';
+const CACHE = 'krai-casebook-shell-v2';
 const SHELL = ['/casebook/', '/casebook/casebook.css', '/casebook/casebook.js', '/casebook/manifest.webmanifest', '/casebook/icon-192.png', '/casebook/icon-512.png', '/assets/logo.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
