@@ -4,19 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#061624">
-  <meta name="description" content="KRAI Casebook pilot: keep vehicle symptoms, scan evidence, repairs, and follow-up checks in one private record.">
+  <meta name="description" content="Free vehicle repair log for owners and independent shops. Record symptoms, work performed, and follow-up checks in your browser; export a JSON backup. No OBD connection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kilzartech.com/casebook/">
+  <meta property="og:title" content="KRAI Casebook | Free Vehicle Repair Log">
+  <meta property="og:description" content="Keep a clear before-and-after vehicle record in your browser. Free pilot, manual entry, JSON backup.">
+  <meta property="og:image" content="https://kilzartech.com/assets/social-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://kilzartech.com/casebook/">
   <link rel="icon" href="../assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="casebook.css">
-  <title>KRAI Casebook Pilot | Kilzar Technologies</title>
+  <title>Free Vehicle Repair Log | KRAI Casebook by Kilzar</title>
 </head>
 <body>
   <a class="skip" href="#workspace">Skip to Casebook</a>
   <header class="top"><a class="brand" href="../"><img src="../assets/logo.svg" alt="" width="38" height="38"><span>KILZAR <b>TECHNOLOGIES</b></span></a><nav><a href="../#krai">KRAI</a><a href="#pilot">Pilot access</a></nav></header>
   <main id="workspace">
-    <div class="intro"><div><p class="eyebrow">KRAI / EARLY PILOT</p><h1>Keep the whole vehicle story.</h1><p>Record what happened, what you checked, what you repaired, and what changed afterward. Your cases stay in this browser unless you export them.</p></div><span class="stage">Local pilot · no scanner connection</span></div>
+    <div class="intro"><div><p class="eyebrow">KRAI / EARLY PILOT</p><h1>A free vehicle repair log that keeps the whole story.</h1><p>Record symptoms, what you checked, repairs, and follow-up results in one place. Start a case below; it stays in this browser unless you export a JSON backup.</p><p class="intro-actions"><a class="primary" href="#editor-title">Start a free case</a><a href="#pilot">Tell us what you need</a></p></div><span class="stage">Local pilot · no scanner connection</span></div>
     <div class="layout">
       <section class="panel editor" aria-labelledby="editor-title">
         <div class="panel-head"><div><p class="eyebrow">01 / CASE</p><h2 id="editor-title">New vehicle case</h2></div><button type="button" id="new-case" class="quiet">Clear form</button></div>
@@ -43,8 +49,8 @@
         <div id="case-list" class="case-list"><p class="empty">No cases yet. Record one on the left to see the before and after comparison.</p></div>
       </aside>
     </div>
-    <section id="pilot" class="pilot panel"><div><p class="eyebrow">PILOT ACCESS</p><h2>Help shape the first paid version.</h2><p>We are testing whether vehicle owners and independent shops need a clearer record of problems, repairs, and verification. Tell us how you keep that history today. We may invite a small group to try future KRAI features.</p><p class="muted">This pilot does not collect your saved vehicle cases. No paid plan or live AI diagnosis is available yet.</p></div>
-      <form class="pilot-contact" name="casebook-pilot" method="POST" action="/casebook/thanks.html" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="casebook-pilot"><input type="hidden" name="referral_source" value="direct"><p hidden><label>Leave empty<input name="bot-field"></label></p><p>Tell us what is missing from your current vehicle records. We may invite a small group to try future KRAI features.</p><label>Your email<input name="email" type="email" autocomplete="email" required></label><label>You are a<select name="role"><option value="Vehicle owner">Vehicle owner</option><option value="DIY enthusiast">DIY enthusiast</option><option value="Independent repair professional">Independent repair professional</option></select></label><label>What would make Casebook useful to you?<textarea name="need" rows="3" maxlength="1000" required></textarea></label><label class="check"><input name="contact-consent" type="checkbox" value="yes" required><span>Kilzar may email me about this pilot. I can opt out by replying.</span></label><button type="submit" class="primary">Request pilot access</button><p class="muted">Vehicle cases stay in your browser. Prefer email? <a href="mailto:ahmad.kilzar@gmail.com?subject=KRAI%20Casebook%20pilot">Write to Kilzar</a>.</p></form>
+    <section id="pilot" class="pilot panel"><div><p class="eyebrow">PILOT ACCESS</p><h2>Help shape Casebook.</h2><p>We are testing whether vehicle owners and independent shops need a clearer record of problems, repairs, and verification. Tell us how you keep that history today. We may invite a small group to try future KRAI features.</p><p class="muted">This pilot does not collect your saved vehicle cases. No paid plan or live AI diagnosis is available yet.</p></div>
+      <form class="pilot-contact" name="casebook-pilot" method="POST" action="/casebook/thanks.html" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="casebook-pilot"><input type="hidden" name="referral_source" value="direct"><p hidden><label>Leave empty<input name="bot-field"></label></p><p>Tell us what is missing from your current vehicle records. We may invite a small group to try future KRAI features.</p><label>Your email<input name="email" type="email" autocomplete="email" required></label><label>You are a<select name="role"><option value="Vehicle owner">Vehicle owner</option><option value="DIY enthusiast">DIY enthusiast</option><option value="Independent repair professional">Independent repair professional</option></select></label><label>What would make Casebook useful to you?<textarea name="need" rows="3" maxlength="1000" required></textarea></label><label class="check"><input name="contact-consent" type="checkbox" value="yes" required><span>Kilzar may email me about this pilot. I can opt out by replying.</span></label><button type="submit" class="primary">Send feedback</button><p class="muted">Vehicle cases stay in your browser. Prefer email? <a href="mailto:ahmad.kilzar@gmail.com?subject=KRAI%20Casebook%20pilot">Write to Kilzar</a>.</p></form>
     </section>
     <section class="faq"><h2>What Casebook can and cannot do</h2><div><article><h3>Do I need an OBD adapter?</h3><p>No. You can enter observations and codes from a scan you already performed. This pilot cannot connect to a vehicle.</p></article><article><h3>Does “no codes” mean a car is fixed?</h3><p>No. Record the follow-up driving or test conditions and symptoms. Casebook shows what you entered and whether a check was documented.</p></article><article><h3>Can I keep it on my Android home screen?</h3><p>Yes. Open this page in Chrome, use the browser menu, and choose Install app or Add to Home screen. Your cases remain on this device; export a backup before clearing browser data.</p></article></div><p>Useful guides: <a href="after-repair-check.html">check what changed after a repair</a> · <a href="repair-history.html">build a vehicle repair history</a> · <a href="intermittent-car-problem.html">record an intermittent car problem</a>.</p></section>
   </main>
