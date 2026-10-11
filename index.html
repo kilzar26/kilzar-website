@@ -236,16 +236,34 @@
 </section>
 
 <section id="contact">
-  <div class="wrap contact reveal">
+  <div class="wrap contact-form-layout reveal">
     <div>
       <div class="eyebrow">10 / Talk to Kilzar</div>
       <h2 class="section-title">Different audience.<br><span>Clear next step.</span></h2>
-      <p class="sub">Repair shops, automotive partners, researchers, accelerator teams, investors, and press can reach Kilzar Technologies directly.</p>
+      <p class="sub">Repair shops, automotive partners, researchers, accelerator teams, investors, and press can reach Kilzar Technologies through one focused channel.</p>
+      <div class="contact-direct"><small>Prefer email?</small><a href="mailto:hello@kilzartech.com">hello@kilzartech.com</a></div>
     </div>
-    <div class="contact-options">
-      <a class="contact-cta" href="mailto:hello@kilzartech.com?subject=Kilzar%20Technologies%20Inquiry"><small>GENERAL / PARTNERS / INVESTORS</small><strong>hello@kilzartech.com</strong><b>↗</b></a>
-      <a class="contact-cta" href="mailto:hello@kilzartech.com?subject=Auto%20Connect%20Repair%20Shop%20Pilot"><small>REPAIR SHOP PILOT</small><strong>hello@kilzartech.com</strong><b>↗</b></a>
-    </div>
+    <form name="kilzar-contact" method="POST" action="/contact-thanks" data-netlify="true" netlify-honeypot="bot-field" class="pilot-form contact-form">
+      <input type="hidden" name="form-name" value="kilzar-contact">
+      <p hidden><label>Leave empty<input name="bot-field"></label></p>
+      <label>Name<input name="name" type="text" autocomplete="name" required></label>
+      <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Organization<input name="organization" type="text" autocomplete="organization"></label>
+      <label>I am contacting Kilzar as
+        <select name="audience" required>
+          <option value="">Choose one</option>
+          <option>Repair shop / service professional</option>
+          <option>Automotive or technology partner</option>
+          <option>Researcher / technical collaborator</option>
+          <option>Investor / accelerator</option>
+          <option>Press / media</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="full">What would you like to discuss?<textarea name="message" rows="5" required></textarea></label>
+      <label class="check full"><input name="contact-consent" type="checkbox" value="yes" required><span>Kilzar may use these details to respond to this inquiry. I can ask for deletion or opt out of further communication.</span></label>
+      <button type="submit" class="btn primary full">Send inquiry →</button>
+    </form>
   </div>
 </section>
 
