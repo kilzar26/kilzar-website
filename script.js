@@ -35,3 +35,14 @@ if(menuButton&&mobileNav){
   mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
   addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 }
+
+// Motion is optional; longer films do not preload and pause each other.
+(()=>{const bg=document.getElementById('krai-background'),button=document.getElementById('background-toggle');
+const motion=matchMedia('(prefers-reduced-motion: reduce)'),saveData=navigator.connection?.saveData;
+if(bg&&button&&!motion.matches&&!saveData){const source=bg.querySelector('source');source.src=source.dataset.src;bg.load();
+bg.play().then(()=>{button.hidden=false}).catch(()=>{});
+button.addEventListener('click',()=>{if(bg.paused){bg.play().then(()=>button.textContent='Pause background').catch(()=>{})}else{bg.pause();button.textContent='Play background'}});
+motion.addEventListener('change',e=>{if(e.matches){bg.pause();button.textContent='Play background'}});
+const observer=new IntersectionObserver(([entry])=>{if(!entry.isIntersecting)bg.pause();else if(button.textContent==='Pause background'&&!motion.matches)bg.play().catch(()=>{})},{threshold:.1});observer.observe(bg);
+}
+document.querySelectorAll('.krai-film').forEach(video=>video.addEventListener('play',()=>{document.querySelectorAll('.krai-film').forEach(other=>{if(other!==video)other.pause()});bg?.pause();if(button)button.textContent='Play background'}));})();

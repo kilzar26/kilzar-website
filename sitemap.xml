@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://kilzartech.com/</loc></url>
-<url><loc>https://kilzartech.com/casebook/</loc></url>
-<url><loc>https://kilzartech.com/casebook/after-repair-check.html</loc></url>
-<url><loc>https://kilzartech.com/casebook/repair-history.html</loc></url>
-<url><loc>https://kilzartech.com/casebook/no-service-records.html</loc></url>
-<url><loc>https://kilzartech.com/casebook/intermittent-car-problem.html</loc></url>
-<url><loc>https://kilzartech.com/privacy.html</loc></url>
-<url><loc>https://kilzartech.com/terms.html</loc></url>
+<url><loc>https://kilzartech.com/</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/krai</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/auto-connect</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/casebook/</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/casebook/after-repair-check.html</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/casebook/repair-history.html</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/casebook/no-service-records.html</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/casebook/intermittent-car-problem.html</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/privacy</loc><lastmod>2026-10-11</lastmod></url>
+<url><loc>https://kilzartech.com/terms</loc><lastmod>2026-10-11</lastmod></url>
 </urlset>
